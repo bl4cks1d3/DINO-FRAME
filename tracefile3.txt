@@ -1,0 +1,243 @@
+20230821.085922.327 Trace started
+ Version: wc3270 v4.2ga10 Mon May 29 22:29:28 UTC 2023 pdm
+ Build options: --disable-local-process --without-readline via gcc 10-win32 20220113 32-bit
+ Command: wc3270.exe C:\Users\wsilva2\OneDrive - Capgemini\Desktop\wc3270\wc3270.exe 192.168.248.136:51004 -model 2 -devname BRADESCONET -httpd 127.0.0.1:6001 -trace -tracefile tracefile3.txt
+ Model 3279-2-E, 24 rows x 80 cols, color display, extended data stream, color emulation, code page bracket
+ ANSI codepage: 1252
+ Local codepage: 1252
+ Host codepage: 37
+ Docs: C:\Users\wsilva2\OneDrive - Capgemini\Documents\wc3270\
+ Install dir: C:\Users\wsilva2\OneDrive - Capgemini\Desktop\wc3270\
+ Desktop: C:\Users\wsilva2\OneDrive - Capgemini\Desktop\
+ Settings: acceptHostname= aidWait=true altCursor=false alwaysInsert=false
+  bindLimit=true blankFill=true clientCert= codePage=bracket crosshair=false
+  cursorBlink=false ftBufferSize=16384 httpd=[127.0.0.1]:6001 insertMode=false
+  lineMode=true lineWrap=false loginMacro= marginedPaste=false model=3279-2-E
+  monoCase=false noTelnetInputMode=line nopSeconds=0 oerrLock=true
+  overlayPaste=true oversize= preferIpv4=false preferIpv6=false
+  printer.codepage= printer.name= printer.options= printerLu= proxy=
+  reconnect=false retry=false reverseInputMode=false rightToLeftMode=false
+  saveLines=4096 screenTrace=false scriptPort= selectUrl=true showTiming=false
+  startTls=true termName= trace=true typeahead=true underscore=true
+  unlockDelay=false unlockDelayMs=350 verifyHostCert=true visibleControl=false
+ Connection state: not-connected
+ Data stream:
+20230821.085922.327 stop pager
+20230821.085922.327 CB(command)[#1] started
+20230821.085922.327 CB(command)[#1.1] IDLE -> RUNNING (child task to be pushed next)
+20230821.085922.327 Macro[#1.2] IDLE -> RUNNING (fresh push)
+20230821.085922.351 set_cblink(false)
+20230821.085922.351 Macro[#1.2] RUNNING -> IDLE (about to resume)
+20230821.085922.351 Macro[#1.2] running
+20230821.085922.351 Macro[#1.2] IDLE -> RUNNING (executing)
+20230821.085922.351 Macro[#1.2] 'Connect("192.168.248.136:51004")'
+20230821.085922.351 command -> Connect("192.168.248.136:51004")
+20230821.085922.351 st_changed(secure,false)
+20230821.085922.351 st_changed(terminal-name,true)
+20230821.085922.359 Resolver slot is 0
+20230821.085922.359 cstate [not-connected] -> [resolving] (host_connect)
+20230821.085922.359 st_changed(connect,true)
+20230821.085922.359 Keyboard unlock(kybd_connect) -NOT_CONNECTED
+20230821.085922.359 Keyboard lock(kybd_connect) +NOT_CONNECTED
+20230821.085922.359 ctlr_enable_cursor(false, connect)
+20230821.085922.359 st_changed(negotiating,true)
+20230821.085922.359 Macro[#1.2] complete, success
+20230821.085922.359 CB(command)[#1.1] RUNNING -> IDLE (about to resume)
+20230821.085922.359 CB(command)[#1.1] child task done, success
+20230821.085922.359 command complete
+20230821.085922.359 stop pager
+20230821.085922.359 CB(command)[#1.1] complete, success
+20230821.085922.359 CB(command)[#1] complete
+20230821.085922.359 Waiting for 6 events or 1000 msec
+20230821.085922.359 Got event 0x0
+20230821.085922.359 Resolution complete, 1 address
+20230821.085922.374 Making host socket non-blocking
+20230821.085922.374 Trying 192.168.248.136, port 51004...
+20230821.085922.374 TCP connection pending.
+20230821.085922.374 cstate [resolving] -> [tcp-pending] (host_continue_connect)
+20230821.085922.374 st_changed(negotiating,true)
+20230821.085922.374 lazya_flush: 56 slots
+20230821.085922.374 Waiting for 7 events or 1 msec
+20230821.085922.374 Got event 0x2
+20230821.085922.390 WindowBufferSize X 80 Y 27
+20230821.085922.390 Waiting for 7 events or 500 msec
+20230821.085922.405 Got event 0x0
+20230821.085922.405 Making host socket non-blocking
+20230821.085922.405 net_input: NetworkEvents 0x10 CONNECT
+20230821.085922.405 cstate [tcp-pending] -> [telnet-pending] (host_connected)
+20230821.085922.405 st_changed(connect,true)
+20230821.085922.405 Keyboard unlock(kybd_connect) -NOT_CONNECTED
+20230821.085922.405 Keyboard lock(kybd_connect) +AWAITING_FIRST
+20230821.085922.405 st_changed(selecting,false)
+20230821.085922.405 Host negotiation step took 0.031252s to complete
+20230821.085922.405 ctlr_enable_cursor(true, connect)
+20230821.085922.405 ctlr_enable_cursor(true, nvt)
+20230821.085922.405 st_changed(negotiating,true)
+20230821.085922.405 Connected to 192.168.248.136, port 51004.
+20230821.085922.405 st_changed(secure,false)
+20230821.085922.405 st_changed(line-mode,true)
+20230821.085922.405 Reading host socket
+20230821.085922.405 Host socket read complete nr=-1
+20230821.085922.405 EWOULDBLOCK
+20230821.085922.405 lazya_flush: 20 slots
+20230821.085922.405 Waiting for 7 events or 485 msec
+20230821.085922.437 Got event 0x0
+20230821.085922.437 Making host socket non-blocking
+20230821.085922.437 net_input: NetworkEvents 0x1 READ
+20230821.085922.437 Reading host socket
+20230821.085922.437 Host socket read complete nr=3
+< 0x0   fffd28
+20230821.085922.437 RCVD DO TN3270E
+> 0x0   fffb28
+20230821.085922.437 SENT WILL TN3270E
+20230821.085922.437 Now operating in connected-unbound mode.
+20230821.085922.437 cstate [telnet-pending] -> [connected-unbound] (host_in3270)
+20230821.085922.437 st_changed(negotiating,true)
+20230821.085922.437 st_changed(3270-mode,false)
+20230821.085922.437 Keyboard lock(kybd_in3270) +AWAITING_FIRST
+20230821.085922.437 st_changed(selecting,false)
+20230821.085922.437 Host negotiation step took 0.000000s to complete
+20230821.085922.437 ctlr_enable_cursor(true, connect)
+20230821.085922.437 lazya_flush: 18 slots
+20230821.085922.437 Waiting for 7 events or 453 msec
+20230821.085922.468 Got event 0x0
+20230821.085922.468 Making host socket non-blocking
+20230821.085922.468 net_input: NetworkEvents 0x1 READ
+20230821.085922.468 Reading host socket
+20230821.085922.468 Host socket read complete nr=7
+< 0x0   fffa280802fff0
+20230821.085922.468 RCVD SB TN3270E SEND DEVICE-TYPE SE
+> 0x0   fffa28020749424d2d333237382d322d45fff0
+20230821.085922.468 SENT SB TN3270E DEVICE-TYPE REQUEST IBM-3278-2-E SE
+20230821.085922.468 Waiting for 7 events or 422 msec
+20230821.085922.500 Got event 0x0
+20230821.085922.500 Making host socket non-blocking
+20230821.085922.500 net_input: NetworkEvents 0x1 READ
+20230821.085922.500 Reading host socket
+20230821.085922.500 Host socket read complete nr=28
+< 0x0   fffa28020449424d2d333237382d322d45015434304341503050fff0
+20230821.085922.500 RCVD SB TN3270E DEVICE-TYPE IS IBM-3278-2-E CONNECT T40CAP0P SE
+> 0x0   fffa28030700020405fff0
+20230821.085922.500 SENT SB TN3270E FUNCTIONS REQUEST BIND-IMAGE RESPONSES SYSREQ CONTENTION-RESOLUTION SE
+20230821.085922.500 Waiting for 7 events or 390 msec
+20230821.085922.531 Got event 0x0
+20230821.085922.531 Making host socket non-blocking
+20230821.085922.531 net_input: NetworkEvents 0x1 READ
+20230821.085922.531 Reading host socket
+20230821.085922.531 Host socket read complete nr=53
+< 0x0   fffa28030400020405fff003000000003101020200003080008487f880000280
+< 0x20  00000000185000007e000006e3c5d3d5c5e300ffef
+20230821.085922.531 RCVD SB TN3270E FUNCTIONS IS BIND-IMAGE RESPONSES SYSREQ CONTENTION-RESOLUTION SE
+20230821.085922.531 TN3270E option negotiation complete.
+20230821.085922.531 RCVD TN3270E(BIND-IMAGE NO-RESPONSE 0)
+20230821.085922.531 st_changed(selecting,false)
+< BIND PLU-name 'TELNET' MaxSec-RU 1024 MaxPri-RU 3840 Rows-Cols Default 24 ...
+... x80 Alternate 24x80
+20230821.085922.531 Now operating in connected-tn3270e mode.
+20230821.085922.531 cstate [connected-unbound] -> [connected-tn3270e] (host_in3270)
+20230821.085922.531 st_changed(3270-mode,true)
+20230821.085922.531 st_changed(selecting,false)
+20230821.085922.531 ctlr_enable_cursor(true, connect)
+20230821.085922.531 RCVD EOR
+20230821.085922.531 lazya_flush: 18 slots
+20230821.085922.531 Waiting for 7 events or 359 msec
+20230821.085922.531 Got event 0x0
+20230821.085922.531 Making host socket non-blocking
+20230821.085922.531 net_input: NetworkEvents 0x1 READ
+20230821.085922.531 Reading host socket
+20230821.085922.531 Host socket read complete nr=1585
+< 0x0   000100000005c71140401d605c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c5c
+< 0x20  5c5c5c5c5c5c5c5c5c11406b4e60606060606060606060606060606060606060
+< 0x40  6060606060606060606060606060604e11c1d15c5c5c5c5c5c5c5c5c5c5c5c5c
+< 0x60  5c5c5c6060605c5c5c5c5c5c5c5c5c5c11c17b4f40c9d740c1c4c4d9c5e2e240
+< 0x80  40407a11c24cf1f9f24bf1f6f84bf2f4f54bf2f2f811c25e4f11c2615c5c5c5c
+< 0xa0  5c5c5c5c5c60404040406d6d6d6d6d6d40405c5c5c5c5c5c5c11c34b4f40d3e4
+< 0xc0  d5c1d4c5404040404040407a11c35ce3f4f0c3c1d7f0d711c36e4f11c3f15c5c
+< 0xe0  5c5c5c6d6040404040605c5c5c5c5c5c5c5c5c5c60405c5c5c5c5c11c45b4f40
+< 0x100 d7d6d9e340c1c4c4d9c5e2e2407a11c46cf6f1f8f5f111c47e4f11c5c15c5c60
+< 0x120 4040404040406d6d6d6d6d6d6d404040405c5c5c5c5c5c5c5c5c11c56b4f40c4
+< 0x140 c1e3c1406140c8d6d9c140407a11c57cf0f861f2f161f2f340f0f87af5f97af2
+< 0x160 f211c64e4f11c6d15c5c5c5c5c6040405c5c5c5c5c5c5c5c5c5c60404040405c
+< 0x180 5c5c5c5c5c11c67b4e6060606060606060606060606060606060606060606060
+< 0x1a0 60606060606060606060604e11c7615c5c5c5c6040405c5c5c5c5c5c5c5c5c5c
+< 0x1c0 5c5c5c5c604040405c5c5c5c11c8f15c5c5c5c6040405c5c5c5c5c5c5c5c5c5c
+< 0x1e0 5c5c5c5c5c604040405c5c5c114ac15c5c5c5c5c60405c5c5c5c5c5c5c5c5c5c
+< 0x200 5c5c5c5c5c5c6040405c5c5c404040405c5c5c5c5c4040404040404040404040
+< 0x220 40404040405c114bd15c5c5c5c5c5c60405c5c5c5c5c5c5c6040405c5c5c5c60
+< 0x240 40405c5c5c5c404040405c404040405c4040404040404040404040404040405c
+< 0x260 114c615c5c5c5c5c5c5c5c405c5c5c5c5c5c6040405c5c5c405c5c5c5c5c5c5c
+< 0x280 404040405c404040405c40405c405c40405c5c404040405c5c5c4040405c5c40
+< 0x2a0 4040405c5c404040405c5c4040405c5c114df15c5c5c5c5c5c5c5c5c5c5c6040
+< 0x2c0 5c5c6040405c5c5c5c5c5c5c5c5c5c5c404040405c5c5c5c5c4040405c5c4040
+< 0x2e0 4040405c40405c40405c40405c40405c40405c40404040405c404040405c4040
+< 0x300 5c114fc15c5c5c5c5c5c5c5c5c5c5c60405c5c6040405c5c5c5c5c5c5c5c5c5c
+< 0x320 5c404040405c404040405c40405c404040405c5c5c40405c40405c40405c5c5c
+< 0x340 5c4040405c5c4040405c404040405c40405c1150d15c5c5c5c5c5c5c5c5c5c5c
+< 0x360 60405c5c6040405c5c5c5c5c5c5c5c5c5c5c404040405c404040405c40405c40
+< 0x380 40405c40405c40405c40405c40405c40404040404040405c40405c404040405c
+< 0x3a0 40405c11d1615c5c5c5c5c5c5c5c5c5c5c60405c5c6040405c5c5c5c5c5c5c5c
+< 0x3c0 5c5c5c404040405c5c5c5c5c4040405c404040405c5c5c4040405c5c5c404040
+< 0x3e0 5c5c404040405c5c404040405c5c4040405c5c11d4c14e606060606060606060
+< 0x400 6060606060606060606060606060606060606060606060606060606060606060
+< 0x420 6060606060606060606060606060606060606060606060606060606060606060
+< 0x440 6060604e11d5d14f40c5a2a3814083969585a7469640514085a2978583558689
+< 0x460 8381408540848540a4a2964085a78393a4a289a596408485408594979985a281
+< 0x480 a240a5898140d985848540c594979985a28140404f11d6614f40c381a2964040
+< 0x4a0 888191814040819387a4948140408999998587a4938199898481848540409581
+< 0x4c0 a240408995869699948148cf85a2404081979985a28595a3818481a26b404086
+< 0x4e0 81a59699404f11d7f14f40839695a38183a3819940409596a2a2814040c38595
+< 0x500 a3998193404084854040c1a385958489948595a3964040c4c9e3c97a40404df0
+< 0x520 40a7a740f1f15d4040f4f1f9f760f2f2f2f2404040404f11d9c14f40c5949799
+< 0x540 85a281a240404040404040404040404040404040404040404040404040404040
+< 0x560 4040404040404040404040404040404040404040404040404040404040404040
+< 0x580 404040404040404f115ad14e6060606060606060606060606060606060606060
+< 0x5a0 6060606060606060606060606060606060606060606060606060606060606060
+< 0x5c0 6060606060606060606060606060606060606060606060604e115cf1e3858393
+< 0x5e0 85409640a289a2a3859481408485a285918184967a115d4b1dc8134040404040
+< 0x600 4040404040404040404040404040404040404040404040404040404040404040
+< 0x620 404040404040404040404040401d60ffef
+20230821.085922.578 RCVD TN3270E(3270-DATA SEND-DATA NO-RESPONSE 0)
+20230821.085922.578 st_changed(selecting,false)
+< EraseWrite(reset,alarm,restore,resetMDT) SetBufferAddress(1,1) StartField ...
+... (protected) '*****************************' SetBufferAddress(1,44) '+-- ...
+... --------------------------------+' SetBufferAddress(2,2) '************* ...
+... ***---**********' SetBufferAddress(2,44) '| IP ADDRESS   :' SetBufferAd ...
+... dress(2,61) '192.168.245.228' SetBufferAddress(2,79) '|' SetBufferAddre ...
+... ss(3,2) '*********-    ______  *******' SetBufferAddress(3,44) '| LUNAM ...
+... E       :' SetBufferAddress(3,61) 'T40CAP0P' SetBufferAddress(3,79) '|' ...
+...  SetBufferAddress(4,2) '*****_-    -**********- *****' SetBufferAddress ...
+... (4,44) '| PORT ADDRESS :' SetBufferAddress(4,61) '61851' SetBufferAddre ...
+... ss(4,79) '|' SetBufferAddress(5,2) '**-      _______    *********' SetB ...
+... ufferAddress(5,44) '| DATA / HORA  :' SetBufferAddress(5,61) '08/21/23  ...
+... 08:59:22' SetBufferAddress(5,79) '|' SetBufferAddress(6,2) '*****-  *** ...
+... *******-    ******' SetBufferAddress(6,44) '+-------------------------- ...
+... --------+' SetBufferAddress(7,2) '****-  **************-   ****' SetBuf ...
+... ferAddress(8,2) '****-  ***************-   ***' SetBufferAddress(9,2) ' ...
+... *****- ****************-  ***    *****                *' SetBufferAddre ...
+... ss(10,2) '******- *******-  ****-  ****    *    *               *' SetB ...
+... ufferAddress(11,2) '******** ******-  *** *******    *    *  * *  **    ...
+...  ***   **    **    **   **' SetBufferAddress(12,2) '***********- **-  * ...
+... **********    *****   **     *  *  *  *  *  *     *    *  *' SetBufferA ...
+... ddress(13,2) '***********- **-  ***********    *    *  *    ***  *  *   ...
+... ****   **   *    *  *' SetBufferAddress(14,2) '***********- **-  ****** ...
+... *****    *    *  *   *  *  *  *  *        *  *    *  *' SetBufferAddres ...
+... s(15,2) '***********- **-  ***********    *****   *    ***   ***   **   ...
+...   **    **   **' SetBufferAddress(17,2) '+----------------------------- ...
+... -----------------------------------------------+' SetBufferAddress(18,2 ...
+... ) '| Esta conexão é específica e de uso exclusivo de empresas via Rede  ...
+... Empresa  |' SetBufferAddress(19,2) '| Caso  haja  alguma  irregularidad ...
+... e  nas  informações  apresentadas,  favor |' SetBufferAddress(20,2) '|  ...
+... contactar  nossa  Central  de  Atendimento  DITI:  (0 xx 11)  4197-2222 ...
+...     |' SetBufferAddress(21,2) '| Empresas                               ...
+...                                      |' SetBufferAddress(22,2) '+------ ...
+... ----------------------------------------------------------------------+ ...
+... ' SetBufferAddress(24,2) 'Tecle o sistema desejado:' SetBufferAddress(2 ...
+... 4,28) StartField(intensified) InsertCursor(24,29) '                     ...
+...                               ' StartField(24,79)(protected)
+20230821.085922.657 Keyboard unlock(ctlr_write) -AWAITING_FIRST
+20230821.085922.657 RCVD EOR
+20230821.085922.657 lazya_flush: 1512 slots
+20230821.085922.672 Waiting for 7 events or 218 msec
+20230821.085922.897 Got event 0x102
+20230821.085923.171 none -> Redraw()
+20230821.085923.173 Waiting for 7 events

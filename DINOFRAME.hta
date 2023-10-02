@@ -1,0 +1,507 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<HTA:APPLICATION 
+    ID="DINOFRAME"
+    APPLICATIONNAME="DINOFRAME"
+    ICON="dino.ico"
+    SINGLEINSTANCE="NO"
+    WINDOWSTATE="maximize"
+    SCROLL="yes"
+	MAXIMIZEBUTTON="YES" 
+	SHOWINTASKBAR="YES" 
+	SELECTION="NO" >
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>DINO-FRAME WC3270 By @BL4CKS1D3SYSTEM</title>
+    <style>
+    .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+        }
+         /* Estilos de conteúdo principal */
+        .content {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        /* Estilos de botões */
+        .button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .button:hover {
+            background-color: #444;
+        }
+
+        /* Estilos de formulário */
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        /* Define o fundo cinza para a página inteira */
+        body {
+            background-color: #ccc; /* Cor de fundo cinza */
+        }
+
+        .menu-container {
+            display: flex;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .menu {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-right: 1px solid #444;
+        }
+
+        .menu:last-child {
+            border-right: none;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            border: 1px solid #333;
+        }
+
+        .menu:hover .submenu {
+            display: block;
+        }
+
+        .submenu-item {
+            padding: 10px 20px;
+            border-bottom: 1px solid #333;
+            cursor: pointer;
+        }
+
+        .submenu-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Estilos para o modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            background-color: #fff;
+            width: 600px;
+            margin: 10px auto;
+            padding: 20px;
+			max-width: 700px; /* Defina um tamanho máximo */
+			max-height: 80vh; /* Define a altura máxima do modal como 80% da altura da viewport */
+			overflow-y: auto; /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura máxima */
+			border: 1px solid #333;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+			height: 350px;
+        }
+
+        /* Estilos para as opções de sistema */
+        .options-container {
+            margin-top: 20px;
+        }
+
+        .options-container label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .options-container select {
+            padding: 5px;
+        }
+
+        .options-container input[type="button"] {
+            padding: 5px 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .options-container input[type="button"]:hover {
+            background-color: #444;
+        }
+		.mainframe-screen {
+            width: 80%;
+            max-width: 800px;
+            height: 400px;
+            background-color: black;
+            margin-top: 20px;
+            color: white;
+            font-family: monospace;
+            white-space: pre;
+            overflow: auto;
+        }
+		#infoButton {
+            padding: 5px 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #conteudoExibido {
+            width: 980px; /* 80 colunas */
+            height: 430px; /* 43 linhas */
+            border: 1px solid black; /* Borda para visualização */
+            white-space: pre-wrap;
+            font-family: monospace;
+            overflow: auto; /* Adiciona scroll caso o conteúdo exceda a altura */
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu principal -->
+    <div class="header">
+        DINO-FRAME WC3270
+    </div>
+    <div class="menu-container">
+        <!-- Menu Ferramentas -->
+        <div class="menu">
+            Ferramentas
+            <div class="submenu">
+                <div class="submenu-item">DOWNLOAD DO MAINFRAME</div>
+                <div class="submenu-item">UPLOAD PARA MAINFRAME</div>
+            </div>
+        </div>
+        <!-- Menu Visual -->
+        <div class="menu">
+            Visual
+            <div class="submenu">
+                <div class="submenu-item" onclick="openMainframePopup()">Tela Mainframe</div>
+            </div>
+        </div>
+		<div class="menu">
+            WC3270 
+            <div class="submenu">
+                <div class="submenu-item" onclick="PromptInit()">Prompt</div>
+				<div class="submenu-item" onclick="killWc3270Processes()">Encerrar wc3270.exe</div>
+            </div>
+        </div>
+        <!-- Menu Sobre e Ajuda -->
+        <div class="menu">
+            Sobre e Ajuda
+            <div class="submenu">
+                <div class="submenu-item" onclick="mostrarSobre()">Sobre</div>
+                <div class="submenu-item"><a href="https://x3270.miraheze.org/wiki/Main_Page" target="_blank">Ajuda</a></div>
+            </div>
+        </div>
+		
+    
+		<div class="menu">
+            Sistema:
+            <select name="systemOption" onchange="">
+                <option value="TS04">TS04</option>
+                <option value="TS56">TS56</option>
+                <option value="TS48">TS48</option>
+                <option value="EVT04">EVT04</option>
+                <option value="EVT06">EVT06</option>
+                <option value="EVT08">EVT08</option>
+				<option value="CUSTOM">CUSTOM</option>
+            </select>
+        </div>
+
+		<!-- Botão de Configurações -->
+		<div class="menu">
+			<div class="menu" onclick="showModal()">Config</div>
+		</div>
+		
+		<button id="infoButton" onclick="showInfoModal()">Info</button>
+		<div class="container" style="padding-left: 50px">
+        <button id="connectButton" onclick="toggleConnection()" class="menu">Conectar ao Mainframe</button>
+    </div>
+	</div>
+
+
+    <!-- Modal de Configurações -->
+    <div class="modal" id="configModal">
+        <div class="modal-content">
+            <form id="configForm">
+                <label>Usuário: <input type="text" name="user"></label><br>
+                <label>Senha: <input type="password" name="password"></label><br>
+                <label>IP: <input type="text" name="ip"></label><br>
+                <label>Porta: <input type="text" name="port"></label><br>
+                <input type="button" value="Salvar" onclick="saveConfiguration(); closeModal()">
+                <input type="button" value="Cancelar" onclick="closeModal()">
+            </form>
+        </div>
+    </div>
+
+    
+    <div class="input-container">
+        <input type="text" id="commandInput" placeholder="Digite o comando">
+        <button onclick="sendCommand()">Enviar Comando</button>
+    </div>
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+			<button onclick="closeInfoModal()">Fechar</button>
+            <h3>Informações</h3>
+            <p id="infoContent">Carregando...</p>
+            <button onclick="closeInfoModal()">Fechar</button>
+        </div>
+    </div>
+    
+    
+    <script>
+		var popupWindow = null;
+        var refreshInterval = 1000
+        // Função para abrir a nova janela como popup
+        function openMainframePopup() {
+            var url = "http://127.0.0.1:6001/3270/screen.html";
+            var width = 660;
+            var height = 400;
+            var left = (window.innerWidth - width) / 2;
+            var top = (window.innerHeight - height) / 2;
+
+            popupWindow = window.open("", "_blank", "width=" + width + ",height=" + height + ",left=" + left + ",top=" + top);
+
+            function updatePopupContent() {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", url, true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var content = xhr.responseText;
+                        var preContent = extractPreContent(content); // Função para extrair conteúdo do <pre>
+                        if (popupWindow && !popupWindow.closed) {
+                            popupWindow.document.body.innerHTML = "<pre>" + preContent + "</pre>";
+                        }
+                    }
+                };
+                xhr.send();
+            }
+
+            // Atualizar o conteúdo a cada intervalo
+            updatePopupContent();
+            setInterval(updatePopupContent, refreshInterval);
+        }
+
+        // Função para extrair conteúdo do <pre>
+        function extractPreContent(content) {
+            var start = content.indexOf("<pre>");
+            var end = content.indexOf("</pre>");
+            if (start !== -1 && end !== -1 && start < end) {
+                return content.substring(start + 5, end);
+            }
+            return "Conteúdo não encontrado.";
+        }
+
+
+    </script>
+    <script>
+		function PromptInit() {
+            var xhr = new ActiveXObject("MSXML2.ServerXMLHTTP.6.0");
+            xhr.open("GET", "http://127.0.0.1:6001/3270/rest/text/prompt()", false);
+            xhr.send();
+
+        }
+        function showInfoModal() {
+            var xhr = new ActiveXObject("MSXML2.ServerXMLHTTP.6.0");
+            xhr.open("GET", "http://127.0.0.1:6001/3270/rest/html/query()", false);
+            xhr.send();
+            
+            var infoContent = document.getElementById("infoContent");
+			infoContent.innerHTML = xhr.responseText;
+            
+            var modal = document.getElementById("infoModal");
+            modal.style.display = "block";
+        }
+        
+        // Função para fechar o modal de informações
+        function closeInfoModal() {
+            var modal = document.getElementById("infoModal");
+            modal.style.display = "none";
+        }
+	function displayMainframeScreen(content) {
+            const mainframeScreen = document.querySelector('.mainframe-screen');
+            mainframeScreen.innerHTML = content;
+        }
+
+	function connectToMainframe() {
+		var fso = new ActiveXObject("Scripting.FileSystemObject");
+		var configFile = "config.ini";
+
+		if (fso.FileExists(configFile)) {
+			var configText = fso.OpenTextFile(configFile, 1);
+			var configData = configText.ReadAll();
+			configText.Close();
+
+			var configLines = configData.split("\n");
+			var config = {};
+
+			for (var i = 0; i < configLines.length; i++) {
+				var line = configLines[i];
+				var keyValue = line.split("=");
+				if (keyValue.length === 2) {
+					var key = keyValue[0].trim();
+					var value = keyValue[1].trim();
+					config[key] = value;
+				}
+			}
+
+			var objShell = new ActiveXObject("WScript.Shell");
+			objShell.Run("mainframe.vbs " + config.IP + " " + config.Port, 0);
+		} else {
+			alert("Arquivo de configuração não encontrado.");
+		}
+	}
+
+	function disconnectFromMainframe() {
+            var xhr = new ActiveXObject("MSXML2.ServerXMLHTTP.6.0");
+			var objShell = new ActiveXObject("WScript.Shell");
+            xhr.open("GET", "http://127.0.0.1:6001/3270/rest/text/disconnect()", true);
+            xhr.send();
+			
+			objShell.Run("taskkill /F /IM wc3270.exe", 0);
+			
+
+        }	
+	var isConnected = false; // Variável para controlar o estado da conexão
+
+	function toggleConnection() {
+		if (isConnected) {
+			disconnectFromMainframe(); // Chama a função de desconexão
+			document.getElementById("connectButton").innerHTML = "Conectar ao Mainframe"; // Muda o texto do botão para "Ligar"
+		} else {
+			connectToMainframe(); // Chama a função de conexão
+			document.getElementById("connectButton").innerHTML = "Desconectar do Mainframe"; // Muda o texto do botão para "Desligar"
+		}
+		isConnected = !isConnected; // Inverte o estado da conexão
+	}
+
+    // Função para enviar comandos ao Mainframe via API REST usando MSXML2.ServerXMLHTTP
+        function sendCommand() {
+            var commandInput = document.getElementById('commandInput');
+            var command = commandInput.value;
+            
+            if (command.trim() === '') {
+                console.log('Comando vazio, nada será enviado.');
+                return;
+            }
+
+            var xhr = new ActiveXObject("MSXML2.ServerXMLHTTP.6.0");
+            xhr.open("GET", "http://127.0.0.1:6001/3270/rest/stext/" + command , false);
+            xhr.send();
+
+            console.log('Comando enviado:', xhr.responseText);
+
+            commandInput.value = '';
+        }
+	
+		
+        // Função para mostrar o modal de configurações
+        function showModal() {
+            const modal = document.getElementById('configModal');
+            modal.style.display = "block";
+        }
+
+        // Função para fechar o modal de configurações
+        function closeModal() {
+            const modal = document.getElementById('configModal');
+            modal.style.display = "none";
+        }
+
+        // Função para salvar as configurações
+        function saveConfiguration() {
+            const fso = new ActiveXObject("Scripting.FileSystemObject");
+            const configFile = "config.ini";
+
+            const configForm = document.getElementById("configForm");
+
+            const userField = configForm.user.value;
+            const passwordField = configForm.password.value;
+            const ipField = configForm.ip.value;
+            const portField = configForm.port.value;
+
+            if (userField !== "" && passwordField !== "" && ipField !== "" && portField !== "") {
+                const configData = "User=" + userField + "\nPassword=" + passwordField + "\nIP=" + ipField + "\nPort=" + portField;
+
+                const configText = fso.CreateTextFile(configFile, true);
+                configText.WriteLine(configData);
+                configText.Close();
+
+                alert("Configurações salvas:\n" + configData);
+            }
+        }
+
+        // Função para carregar configurações do armazenamento local
+        function loadConfiguration() {
+            const fso = new ActiveXObject("Scripting.FileSystemObject");
+            const configFile = "config.ini";
+
+            if (fso.FileExists(configFile)) {
+                const configText = fso.OpenTextFile(configFile, 1);
+                const configData = configText.ReadAll();
+                configText.Close();
+
+                const configLines = configData.split("\n");
+                const config = {};
+
+                for (let i = 0; i < configLines.length; i++) {
+                    const line = configLines[i];
+                    const keyValue = line.split("=");
+                    if (keyValue.length === 2) {
+                        const key = keyValue[0].trim();
+                        const value = keyValue[1].trim();
+                        config[key] = value;
+                    }
+                }
+
+                const configForm = document.getElementById("configForm");
+                configForm.user.value = config.User;
+                configForm.password.value = config.Password;
+                configForm.ip.value = config.IP;
+                configForm.port.value = config.Port;
+            }
+        }
+		function killWc3270Processes() {
+			var objShell = new ActiveXObject("WScript.Shell");
+			objShell.Run("taskkill /F /IM wc3270.exe", 0);
+		}
+		function mostrarSobre() {
+			var sobreTexto = "O DINO-FRAME WC3270 é uma aplicação projetada para fornecer uma interface amigável e eficiente para interagir com sistemas Mainframe usando o emulador `wc3270`. Esta aplicação permite que os usuários se conectem ao Mainframe, enviem comandos e acessem informações de forma rápida e conveniente.";
+
+			alert(sobreTexto);
+		}
+
+
+
+
+        // Chamar a função para carregar as configurações ao carregar a página
+        window.onload = function() {
+            loadConfiguration();
+        };
+    </script>
+</body>
+</html>

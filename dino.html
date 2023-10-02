@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <title>DINO-FRAME WC3270</title>
+    <style>
+        /* Estilos de cabeçalho */
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        /* Estilos de barra de menu */
+        .menu-container {
+            display: flex;
+            background-color: #444;
+            color: #fff;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        .menu {
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        /* Estilos de conteúdo principal */
+        .content {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        /* Estilos de botões */
+        .button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .button:hover {
+            background-color: #444;
+        }
+
+        /* Estilos de formulário */
+        .form-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos da tela do Mainframe */
+        .mainframe-screen {
+            background-color: black;
+            color: white;
+            font-family: monospace;
+            white-space: pre;
+            overflow: auto;
+            height: 400px;
+            margin-top: 20px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        DINO-FRAME WC3270
+    </div>
+    <div class="menu-container">
+        <div class="menu">
+            Ferramentas
+            <!-- Adicione aqui as opções de ferramentas e seus eventos onclick -->
+        </div>
+        <div class="menu">
+            Visual
+            <!-- Adicione aqui as opções visuais e seus eventos onclick -->
+        </div>
+        <div class="menu">
+            WC3270
+            <!-- Adicione aqui as opções WC3270 e seus eventos onclick -->
+        </div>
+        <div class="menu">
+            Sobre e Ajuda
+            <!-- Adicione aqui as opções de Sobre e Ajuda e seus eventos onclick -->
+        </div>
+        <div class="menu">
+            Sistema:
+            <!-- Adicione aqui o seletor de sistema -->
+        </div>
+        <div class="menu">
+            <button class="button" onclick="showModal()">Configurações</button>
+            <button class="button" onclick="showInfoModal()">Info</button>
+        </div>
+    </div>
+    <div class="content">
+        <!-- Adicione aqui o conteúdo principal da página -->
+    </div>
+    <div class="mainframe-screen">
+        <!-- Aqui será exibida a tela do Mainframe -->
+    </div>
+</body>
+</html>
